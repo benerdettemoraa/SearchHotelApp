@@ -16,18 +16,50 @@ public class Hotel {
     @SerializedName("rating")
     private int rating;
 
-    private class Contact {
+    public class Contact {
         @SerializedName("phone")
         String phone;
         @SerializedName("fax")
         String fax;
+
+        public String getFax() {
+            return fax;
+        }
+
+        public void setFax(String fax) {
+            this.fax = fax;
+        }
+
+        public String getPhone() {
+            return phone;
+        }
+
+        public void setPhone(String phone) {
+            this.phone = phone;
+        }
     }
 
-    private class HotelDistance {
+    public class HotelDistance {
         @SerializedName("distance")
         float distance;
         @SerializedName("distanceUnit")
         String distanceUnit;
+
+        public void setDistance(float distance) {
+            this.distance = distance;
+        }
+
+        public void setDistanceUnit(String distanceUnit) {
+            this.distanceUnit = distanceUnit;
+        }
+
+        public float getDistance() {
+            return distance;
+        }
+
+        public String getDistanceUnit() {
+            return distanceUnit;
+        }
     }
 
     public String getName() {

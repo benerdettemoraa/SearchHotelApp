@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero_size">0dp</dimen>
+    <dimen name="eight_size">8dp</dimen>
+    <dimen name="four_size">4dp</dimen>
+    <dimen name="two_size">2dp</dimen>
+    <dimen name="fifty_size">50dp</dimen>
+    <dimen name="sixty_size">60dp</dimen>
+</resources>
