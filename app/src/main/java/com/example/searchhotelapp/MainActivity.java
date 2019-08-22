@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements AuthTokenCallback
         hotelListAdapter = new HotelListAdapter(new ArrayList<Hotel>());
         lstHotelsView.setAdapter(hotelListAdapter);
 
-
         TokenServices.getAuthToken(Secret.CLIENT_ID, Secret.CLIENT_SECRET, Secret.GRANT_TYPE, this);
     }
 
