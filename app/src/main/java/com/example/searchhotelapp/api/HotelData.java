@@ -6,13 +6,5 @@ import java.util.List;
 
 public class HotelData {
     @SerializedName("data")
-    private List<HotelInfo> hotelInfoList;
-
-    public List<HotelInfo> getHotelInfoList() {
-        return hotelInfoList;
-    }
-
-    public void setHotelInfoList(List<HotelInfo> hotelInfoList) {
-        this.hotelInfoList = hotelInfoList;
-    }
+    public List<HotelInfo> hotelInfoList;
 }

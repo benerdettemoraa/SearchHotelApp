@@ -36,8 +36,8 @@ public class HotelService {
             public void onResponse(Call<HotelData> call, Response<HotelData> response) {
                 HotelData hotelData = response.body();
                 if (hotelData != null) {
-                    fetchListener.onFetchSuccess(BasicUtils.mapHotelInfoToHotel(hotelData.getHotelInfoList()));
-                    Log.d("ListOfHotels", new Gson().toJson(hotelData.getHotelInfoList()));
+                    fetchListener.onFetchSuccess(BasicUtils.mapHotelInfoToHotel(hotelData.hotelInfoList));
+                    Log.d("ListOfHotels", new Gson().toJson(hotelData.hotelInfoList));
                 }else {
                     fetchListener.onError("No Hotels Found");
                 }
