@@ -8,6 +8,7 @@ import com.example.searchhotelapp.MainActivity;
 import com.example.searchhotelapp.api.APIClient;
 import com.example.searchhotelapp.api.APIService;
 import com.example.searchhotelapp.api.HotelData;
+import com.example.searchhotelapp.api.HotelInfo;
 import com.example.searchhotelapp.api.HotelSingle;
 import com.example.searchhotelapp.api.Token;
 import com.example.searchhotelapp.callback.HotelFetchListener;
@@ -63,7 +64,12 @@ public class HotelService {
                     return;
                 }
                 Log.d("HOTEL_DATA", new Gson().toJson(response.body().getHotelInfo()));
-                fetchListener.onFetchSuccess(response.body().getHotelInfo().getHotel());
+                HotelInfo hotelInfo = response.body().getHotelInfo();
+                if (hotelInfo == null){
+                    fetchListener.onError("Hotel not found");
+                    return;
+                }
+                fetchListener.onFetchSuccess(hotelInfo.getHotel());
             }
 
             @Override
