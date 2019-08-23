@@ -35,8 +35,8 @@ public class HotelViewHolder extends RecyclerView.ViewHolder {
                     hotel.getHotelDistance().getDistanceUnit()));
         }
         if (contact != null) {
-            txtTelephone.setText(hotel.getContact().getPhone());
-            txtFax.setText(hotel.getContact().getFax());
+            txtTelephone.setText(String.format(Locale.getDefault(), "Tel: %s", hotel.getContact().getPhone()));
+            txtFax.setText(String.format(Locale.getDefault(), "Fax: %s", hotel.getContact().getFax()));
         }
 
         itemView.setOnClickListener(new View.OnClickListener() {
