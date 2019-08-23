@@ -2,11 +2,13 @@ package com.example.searchhotelapp.adapters.viewHolder;
 
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.searchhotelapp.R;
+import com.example.searchhotelapp.callback.HotelClickListener;
 import com.example.searchhotelapp.models.Hotel;
 
 import java.util.Locale;
@@ -22,7 +24,7 @@ public class HotelViewHolder extends RecyclerView.ViewHolder {
         txtFax = view.findViewById(R.id.txt_fax_contact);
     }
 
-    public void bind(Hotel hotel){
+    public void bind(final Hotel hotel, final HotelClickListener hotelClickListener){
         Hotel.Contact contact = hotel.getContact();
         Hotel.HotelDistance hotelDistance = hotel.getHotelDistance();
         txtRating.setText(String.format(Locale.getDefault(),"Rated: %d", hotel.getRating()));
@@ -36,5 +38,12 @@ public class HotelViewHolder extends RecyclerView.ViewHolder {
             txtTelephone.setText(hotel.getContact().getPhone());
             txtFax.setText(hotel.getContact().getFax());
         }
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hotelClickListener.onHotelClick(hotel);
+            }
+        });
     }
 }

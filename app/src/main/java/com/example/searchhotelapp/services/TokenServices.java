@@ -17,6 +17,7 @@ import retrofit2.Response;
 public class TokenServices {
     private static APIService apiService = APIClient.getInstance().create(APIService.class);
     public static void getAuthToken(String clientId, String clientSecret, String grantType, final AuthTokenCallback authCallback) {
+        Log.d("WHEN_IS_IT_CALLED", "Called from here");
         final Call<Token> token = apiService.authenticate(clientId, clientSecret, grantType);
         token.enqueue(new Callback<Token>() {
             @Override

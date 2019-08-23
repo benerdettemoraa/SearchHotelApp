@@ -3,6 +3,8 @@ package com.example.searchhotelapp.models;
 import com.google.gson.annotations.SerializedName;
 
 public class Hotel {
+    @SerializedName("hotelId")
+    private String hotelId;
     @SerializedName("name")
     private String name;
     @SerializedName("hotelDistance")
@@ -60,6 +62,14 @@ public class Hotel {
         public String getDistanceUnit() {
             return distanceUnit;
         }
+    }
+
+    public String getHotelId() {
+        return hotelId;
+    }
+
+    public void setHotelId(String hotelId) {
+        this.hotelId = hotelId;
     }
 
     public String getName() {

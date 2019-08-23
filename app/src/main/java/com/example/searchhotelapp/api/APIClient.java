@@ -1,6 +1,7 @@
 package com.example.searchhotelapp.api;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Headers;
 import okhttp3.Interceptor;
@@ -14,7 +15,9 @@ public class APIClient {
     private static final String BASE_URL = "https://test.api.amadeus.com/";
 
     public static Retrofit getInstance(){
-//        OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
+        OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
+        clientBuilder.connectTimeout(15, TimeUnit.SECONDS).readTimeout(15, TimeUnit.SECONDS);
+
 //        Interceptor headerAuthorizationInterceptor = new Interceptor() {
 //            @Override
 //            public Response intercept(Chain chain) throws IOException {
@@ -24,12 +27,12 @@ public class APIClient {
 //                return chain.proceed(request);
 //            }
 //        };
-//        OkHttpClient client = clientBuilder.addInterceptor(headerAuthorizationInterceptor).build();
+        OkHttpClient client = clientBuilder.build();
         if (retrofit == null){
             retrofit = new retrofit2.Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
-//                    .client(client)
+                    .client(client)
                     .build();
 
         }
