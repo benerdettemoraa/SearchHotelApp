@@ -28,6 +28,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements AuthTokenCallback, HotelClickListener {
     public static final String HOTEL_ID_KEY = "com.example.searchhotelapp.MainActivity.HOTEL_ID";
     public static final String ACCESS_TOKEN_KEY = "com.example.searchhotelapp.MainActivity.ACCESS_TOKEN";
+    public static final String HOTEL_KEY = "com.example.searchhotelapp.MainActivity.HOTEL";
     private HotelListAdapter hotelListAdapter;
     private ProgressBar loadingIndicator;
     private Token token;
@@ -83,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements AuthTokenCallback
         Intent intent = new Intent(this, HotelInfoActivity.class);
         intent.putExtra(HOTEL_ID_KEY, hotel.getHotelId());
         intent.putExtra(ACCESS_TOKEN_KEY, token.getAccessToken());
+
+        intent.putExtra(HOTEL_KEY, hotel);
         startActivity(intent);
     }
 }

@@ -7,4 +7,5 @@
     <dimen name="fifty_size">50dp</dimen>
     <dimen name="sixty_size">60dp</dimen>
     <dimen name="three_hundred_size">300dp</dimen>
+    <dimen name="two_fifty_size">250dp</dimen>
 </resources>

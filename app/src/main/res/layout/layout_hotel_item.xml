@@ -21,6 +21,15 @@
             app:layout_constraintTop_toTopOf="parent"
             android:src="@mipmap/ic_launcher_round"/>
 
+        <ProgressBar
+            android:id="@+id/progress_circular_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/img_hotel_avatar"
+            app:layout_constraintLeft_toLeftOf="@id/img_hotel_avatar"
+            app:layout_constraintRight_toRightOf="@id/img_hotel_avatar"
+            app:layout_constraintTop_toTopOf="@+id/img_hotel_avatar" />
+
         <TextView android:id="@+id/txt_hotel_name"
             android:layout_width="@dimen/zero_size"
             android:layout_height="wrap_content"

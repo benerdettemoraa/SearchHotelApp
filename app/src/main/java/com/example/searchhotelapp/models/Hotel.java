@@ -2,7 +2,14 @@ package com.example.searchhotelapp.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Hotel {
+import java.io.Serializable;
+import java.util.List;
+
+public class Hotel implements Serializable {
+    @SerializedName("description")
+    public Description description;
+    @SerializedName("media")
+    public List<HotelMedia> media;
     @SerializedName("hotelId")
     private String hotelId;
     @SerializedName("name")
@@ -17,52 +24,6 @@ public class Hotel {
     private Contact contact;
     @SerializedName("rating")
     private int rating;
-
-    public class Contact {
-        @SerializedName("phone")
-        String phone;
-        @SerializedName("fax")
-        String fax;
-
-        public String getFax() {
-            return fax;
-        }
-
-        public void setFax(String fax) {
-            this.fax = fax;
-        }
-
-        public String getPhone() {
-            return phone;
-        }
-
-        public void setPhone(String phone) {
-            this.phone = phone;
-        }
-    }
-
-    public class HotelDistance {
-        @SerializedName("distance")
-        float distance;
-        @SerializedName("distanceUnit")
-        String distanceUnit;
-
-        public void setDistance(float distance) {
-            this.distance = distance;
-        }
-
-        public void setDistanceUnit(String distanceUnit) {
-            this.distanceUnit = distanceUnit;
-        }
-
-        public float getDistance() {
-            return distance;
-        }
-
-        public String getDistanceUnit() {
-            return distanceUnit;
-        }
-    }
 
     public String getHotelId() {
         return hotelId;
@@ -119,4 +80,5 @@ public class Hotel {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
 }
